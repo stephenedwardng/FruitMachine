@@ -16,7 +16,11 @@ public class FruitMachine {
         return this.money;
     }
 
-    public void receiveMoney(int amount) {
-        this.money += amount;
+    public void setMoney(int money) {
+        this.money = money;
+    }
+
+    public void receiveMoney(int amountToAdd) {
+        money += amountToAdd;
     }
 }

@@ -17,6 +17,7 @@ public class PlayerTest {
     @Before
     public void before() {
         player = new Player(20, fruitMachine);
+        fruitMachine = new FruitMachine(0);
     }
 
     @Test
@@ -27,12 +28,13 @@ public class PlayerTest {
     @Test
     public void canPayMoney() {
         player.payMoney(1);
+        fruitMachine.receiveMoney(1);
         assertEquals(19, player.getMoney());
-        //assertEquals(1, fruitMachine.payoutValue());
+        assertEquals(1, fruitMachine.getMoney());
     }
 
-    @Test
-    public void canPullLever() {
-        // game.spin();
-    }
+//    @Test
+//    public void canPullLever() {
+//        // game.spin();
+//    }
 }

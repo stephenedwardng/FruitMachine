@@ -19,7 +19,6 @@ public class Player {
     }
 
     public void payMoney(int amount) {
-        this.money -= amount;
-        fruitMachine.receiveMoney(amount);
+        money -= amount;
     }
 }
