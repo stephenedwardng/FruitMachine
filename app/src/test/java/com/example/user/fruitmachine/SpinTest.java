@@ -3,6 +3,11 @@ package com.example.user.fruitmachine;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+
+import behaviours.Fruit;
+
+import static behaviours.Fruit.BAR;
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -15,12 +20,18 @@ public class SpinTest {
 
     @Before
     public void before() {
-        spin = new Spin();
+        ArrayList<Fruit> threeRolls = new ArrayList<>();
+        spin = new Spin(threeRolls);
     }
 
+//    @Test
+//    public void canSpin() {
+//        assertEquals("7", spin.spin().getFruitType());
+//    }
+
     @Test
-    public void canSpin() {
-        assertEquals("7", spin.spin().getFruitType());
+    public void canCollectThreeRolls() {
+        assertEquals("[BAR, JACKPOT, CHERRIES]", spin.collectThreeRolls());
     }
 
 
