@@ -13,9 +13,10 @@ public class Spin {
     ArrayList<Fruit> threeRolls;
     int spinValue;
 
-    public Spin(ArrayList<Fruit> threeRolls) {
+    public Spin() {
         this.threeRolls = threeRolls;
         this.spinValue = 0;
+        threeRolls = new ArrayList<>();
     }
 
     public Fruit spin() {
@@ -34,6 +35,10 @@ public class Spin {
         }
 
         return threeRolls;
+    }
+
+    public void clearThreeRolls() {
+        threeRolls.clear();
     }
 
     public int calculateSpinValue() {

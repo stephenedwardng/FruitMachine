@@ -7,11 +7,9 @@ package com.example.user.fruitmachine;
 public class Player {
 
     private int money;
-    private FruitMachine fruitMachine;
 
-    public Player (int money, FruitMachine fruitMachine) {
+    public Player (int money) {
         this.money = money;
-        this.fruitMachine = fruitMachine;
     }
 
     public int getMoney() {
