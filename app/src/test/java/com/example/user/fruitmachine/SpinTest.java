@@ -34,5 +34,10 @@ public class SpinTest {
         assertEquals("[BAR, JACKPOT, CHERRIES]", spin.collectThreeRolls());
     }
 
+    @Test
+    public void canCalculateSpinValue() {
+        //spin.collectThreeRolls();
+        assertEquals(6, spin.calculateSpinValue());
+    }
 
 }

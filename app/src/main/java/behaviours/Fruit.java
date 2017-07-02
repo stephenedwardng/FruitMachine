@@ -5,10 +5,10 @@ package behaviours;
  */
 
 public enum Fruit {
-    CHERRIES(1, "o|o"),
-    BAR(2, "BAR"),
-    SEVEN(3, "7"),
-    JACKPOT(5, "£");
+    CHERRIES(5, "o|o"),
+    BAR(20, "BAR"),
+    SEVEN(60, "7"),
+    JACKPOT(200, "£");
 
     private int value;
     private String fruitType;
