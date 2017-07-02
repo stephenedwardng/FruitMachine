@@ -44,53 +44,13 @@ public class Spin {
             sum += roll.getValue();
         }
 
-        return sum;
+        if (threeRolls.get(0).equals(threeRolls.get(1))
+                && threeRolls.get(1).equals(threeRolls.get(2))) {
+            return sum;
+            } else {
+            return 0;
+        }
     }
 
-
-
-//    public int calculateSpinValue() {
-//
-//        Fruit[] fruits = Fruit.values();
-//        for (Fruit fruit : fruits) {
-//            if (threeRolls.get(0).equals(fruit)
-//                    && threeRolls.get(1).equals(fruit)
-//                    && threeRolls.get(2).equals(fruit)) {
-//                return fruit.getValue();
-//            }
-//        }
-//
-//        return 0;
-//    }
-
-//    public int calculateSpinValue() {
-//
-//        ArrayList<Fruit> currentSpin = collectThreeRolls();
-//        int value = 0;
-//
-//        value += currentSpin.get(0).getValue();
-//        value += currentSpin.get(1).getValue();
-//        value += currentSpin.get(2).getValue();
-
-//            for (int count = 0; count <= 2; count++) {
-//                spinValue += threeRolls.get(count).getValue();
-//            }
-
-//        if (spinValue == 15 |
-//                spinValue == 60 |
-//                spinValue == 180 |
-//                spinValue == 600) {
-//            return spinValue;
-//        } else {
-//            return 0;
-//        }
-
-//
-//        if (currentSpin.get(0).getFruitType().equals(currentSpin.get(1).getFruitType())
-//                && currentSpin.get(1).getFruitType().equals(currentSpin.get(2).getFruitType())) {
-//            return value;
-//        } else return -1;
-
-//    }
 
 }
