@@ -12,15 +12,27 @@ public class Game {
     private Spin spin;
 
     public Game() {
+
         fruitMachine = new FruitMachine(100);
         player = new Player(10);
         spin = new Spin();
         ui = new UserInterface(spin);
+
     }
 
     public void playGame() {
+
         ui.promptPullLever();
-        char choice = ui.pullLever();
+        char choice = ui.action();
+        gameLoop(choice);
+
+        ui.pullOrCashOut();
+        gameLoop(ui.action());
+
+
+    }
+
+    public void gameLoop(char choice) {
 
         while (choice == 'p') {
             spin.collectThreeRolls();
@@ -34,10 +46,8 @@ public class Game {
 
             spin.clearThreeRolls();
             ui.promptPullLever();
-            choice = ui.pullLever();
+            choice = ui.action();
         }
-
-        ui.pullOrCashOut();
 
     }
 

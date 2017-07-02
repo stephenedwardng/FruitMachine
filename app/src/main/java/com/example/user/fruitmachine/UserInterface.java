@@ -18,7 +18,7 @@ public class UserInterface {
         System.out.println("Press 'p' to pull lever");
     }
 
-    public char pullLever() {
+    public char action() {
         Scanner scan = new Scanner(System.in);
         String input = scan.nextLine().toLowerCase();
         return input.charAt(0);
@@ -35,6 +35,7 @@ public class UserInterface {
     public void pullOrCashOut() {
         System.out.println("Press 'c' to Cash Out or 'p' to Pull lever");
     }
+
 
 
 }
