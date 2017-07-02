@@ -56,6 +56,26 @@ public class Game {
                     }
                 }
 
+                ui.promptHold();
+                char hold = ui.action();
+                if (hold == 'y') {
+                    for (int count = 0; count < 3; count++) {
+                        ui.promptAskRoll(count);
+                        if (ui.action() == 'y') {
+                            spin.threeRolls.remove(count);
+                            spin.threeRolls.add(count, spin.spin());
+                        }
+                    }
+                    ui.displaySpinResult();
+                    if (spin.calculateSpinValue() != 0) {
+                        ui.threeMatch();
+                        ui.pullOrCashOut();
+                        if (ui.action() == 'c') {
+                            break;
+                        }
+                    }
+                }
+
                 spin.clearThreeRolls();
                 money--;
             } while (choice == 'p');

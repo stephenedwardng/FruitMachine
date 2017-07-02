@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by user on 02/07/2017.
  */
 
-public class CommandLineInterface implements UserInterface{
+public class CommandLineInterface {
 
     Spin spin;
 
@@ -49,4 +49,19 @@ public class CommandLineInterface implements UserInterface{
         int input = scan.nextInt();
         return input;
     }
+
+    public void promptHold() {
+        System.out.println("Do you want to hold? y / n ");
+    }
+
+    public void promptAskRoll(int count) {
+        System.out.println("Do you want to re-spin roller " + spin.threeRolls.get(count) + "? y / n ");
+    }
+
+    public char actionReSpin() {
+        Scanner scan = new Scanner(System.in);
+        String input = scan.nextLine().toLowerCase();
+        return input.charAt(0);
+    }
+
 }
