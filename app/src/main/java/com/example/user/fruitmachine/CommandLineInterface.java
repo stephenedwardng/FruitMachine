@@ -51,11 +51,20 @@ public class CommandLineInterface {
     }
 
     public void promptHold() {
-        System.out.println("Do you want to hold? y / n ");
+        System.out.println("Hold? y / n ");
     }
 
     public void promptAskRoll(int count) {
         System.out.println("Do you want to re-spin " + spin.threeRolls.get(count) + "? y / n ");
     }
+
+    public void promptNudge() {
+        System.out.println("Nudge? y / n ");
+    }
+
+    public void promptAskNudge(int count) {
+        System.out.println("Do you want to nudge " + spin.threeRolls.get(count) + "? y / n ");
+    }
+
 
 }

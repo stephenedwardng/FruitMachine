@@ -1,5 +1,7 @@
 package com.example.user.fruitmachine;
 
+import behaviours.Fruit;
+
 /**
  * Created by user on 02/07/2017.
  */
@@ -75,6 +77,29 @@ public class Game {
                         }
                     }
                 }
+
+                ui.promptNudge();
+                char nudge = ui.action();
+                if (nudge == 'y') {
+                    for (int count = 0; count < 3; count++) {
+                        ui.promptAskNudge(count);
+                        if (ui.action() == 'y') {
+                            spin.threeRolls.remove(count);
+                            spin.threeRolls.add(count, spin.nudge(count));
+                            break;
+                        }
+                    }
+                    ui.displaySpinResult();
+                    if (spin.calculateSpinValue() != 0) {
+                        ui.threeMatch();
+                        ui.pullOrCashOut();
+                        if (ui.action() == 'c') {
+                            break;
+                        }
+                    }
+                }
+
+
 
                 spin.clearThreeRolls();
                 money--;

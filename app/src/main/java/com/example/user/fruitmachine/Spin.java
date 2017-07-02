@@ -14,17 +14,19 @@ public class Spin {
     int spinValue;
 
     public Spin() {
-        this.threeRolls = threeRolls;
         this.spinValue = 0;
         threeRolls = new ArrayList<>();
     }
 
     public Fruit spin() {
+
         Fruit[] fruits = Fruit.values();
         Random random = new Random();
         int index = random.nextInt(fruits.length);
         Fruit fruit = fruits[index];
+
         return fruit;
+
     }
 
     public ArrayList<Fruit> collectThreeRolls() {
@@ -38,7 +40,9 @@ public class Spin {
     }
 
     public void clearThreeRolls() {
+
         threeRolls.clear();
+
     }
 
     public int calculateSpinValue() {
@@ -55,6 +59,22 @@ public class Spin {
             } else {
             return 0;
         }
+
+    }
+
+    public Fruit nudge(int index) {
+
+        Fruit[] fruits = Fruit.values();
+        Fruit fruit;
+
+        if (index < fruits.length) {
+            fruit = fruits[index + 1];
+        } else {
+            fruit = fruits[0];
+        }
+
+        return fruit;
+
     }
 
 

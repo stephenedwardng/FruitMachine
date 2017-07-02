@@ -25,4 +25,5 @@ public enum Fruit {
     public String getFruitType() {
         return this.fruitType;
     }
+
 }
