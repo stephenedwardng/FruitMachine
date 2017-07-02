@@ -14,7 +14,7 @@ public class Game {
     public Game() {
 
         fruitMachine = new FruitMachine(100);
-        player = new Player(10);
+        player = new Player(100);
         spin = new Spin();
         ui = new UserInterface(spin);
 
@@ -37,24 +37,35 @@ public class Game {
 
     public void gameLoop(char choice) {
 
-        do {
-            ui.promptPullLever();
-            choice = ui.action();
+            int money = 0;
 
-            spin.collectThreeRolls();
-            spin.calculateSpinValue();
-            ui.displaySpinResult();
-
-            if (spin.calculateSpinValue() != 0) {
-                ui.threeMatch();
-                ui.pullOrCashOut();
-                if (ui.action() == 'c') {
-                    break;
+            do {
+                if (money == 0) {
+                    ui.promptMoney();
+                    money = ui.moneyAction();
+                    player.payMoney(money);
+                    fruitMachine.receiveMoney(money);
                 }
-            }
 
-            spin.clearThreeRolls();
-        } while (choice == 'p');
+                ui.promptPullLever();
+                choice = ui.action();
+
+                spin.collectThreeRolls();
+                spin.calculateSpinValue();
+                ui.displaySpinResult();
+
+                if (spin.calculateSpinValue() != 0) {
+                    ui.threeMatch();
+                    ui.pullOrCashOut();
+                    if (ui.action() == 'c') {
+                        break;
+                    }
+                }
+
+                spin.clearThreeRolls();
+                money--;
+            } while (choice == 'p');
+
 
     }
 

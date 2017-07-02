@@ -40,5 +40,13 @@ public class UserInterface {
         System.out.println("You have cashed out with £" + spin.calculateSpinValue());
     }
 
+    public void promptMoney() {
+        System.out.println("Please insert coins (as an integer): ");
+    }
 
+    public int moneyAction() {
+        Scanner scan = new Scanner(System.in);
+        int input = scan.nextInt();
+        return input;
+    }
 }
