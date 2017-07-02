@@ -6,7 +6,7 @@ package com.example.user.fruitmachine;
 
 public class Game {
 
-    private UserInterface ui;
+    private CommandLineInterface ui;
     private FruitMachine fruitMachine;
     private Player player;
     private Spin spin;
@@ -16,7 +16,7 @@ public class Game {
         fruitMachine = new FruitMachine(100);
         player = new Player(100);
         spin = new Spin();
-        ui = new UserInterface(spin);
+        ui = new CommandLineInterface(spin);
 
     }
 
@@ -25,13 +25,7 @@ public class Game {
         char choice = 'p';
         gameLoop(choice);
 
-//        while (choice == 'p') {
-//            ui.pullOrCashOut();
-//            gameLoop(ui.action());
-//            break;
-//        }
         ui.cashOut();
-
 
     }
 
@@ -65,7 +59,6 @@ public class Game {
                 spin.clearThreeRolls();
                 money--;
             } while (choice == 'p');
-
 
     }
 
