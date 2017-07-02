@@ -22,32 +22,39 @@ public class Game {
 
     public void playGame() {
 
-        ui.promptPullLever();
-        char choice = ui.action();
+        char choice = 'p';
         gameLoop(choice);
 
-        ui.pullOrCashOut();
-        gameLoop(ui.action());
+//        while (choice == 'p') {
+//            ui.pullOrCashOut();
+//            gameLoop(ui.action());
+//            break;
+//        }
+        ui.cashOut();
 
 
     }
 
     public void gameLoop(char choice) {
 
-        while (choice == 'p') {
+        do {
+            ui.promptPullLever();
+            choice = ui.action();
+
             spin.collectThreeRolls();
             spin.calculateSpinValue();
             ui.displaySpinResult();
 
             if (spin.calculateSpinValue() != 0) {
                 ui.threeMatch();
-                break;
+                ui.pullOrCashOut();
+                if (ui.action() == 'c') {
+                    break;
+                }
             }
 
             spin.clearThreeRolls();
-            ui.promptPullLever();
-            choice = ui.action();
-        }
+        } while (choice == 'p');
 
     }
 

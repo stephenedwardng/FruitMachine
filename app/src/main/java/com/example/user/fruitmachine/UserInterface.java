@@ -33,9 +33,12 @@ public class UserInterface {
     }
 
     public void pullOrCashOut() {
-        System.out.println("Press 'c' to Cash Out or 'p' to Pull lever");
+        System.out.println("Press 'c' to Cash Out or 'k' to Keep playing");
     }
 
+    public void cashOut() {
+        System.out.println("You have cashed out with £" + spin.calculateSpinValue());
+    }
 
 
 }
