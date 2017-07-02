@@ -1,5 +1,6 @@
 package com.example.user.fruitmachine;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 /**
@@ -45,8 +46,15 @@ public class CommandLineInterface implements UserInterface {
     }
 
     public int moneyAction() {
-        Scanner scan = new Scanner(System.in);
-        int input = scan.nextInt();
+        int input = 0;
+        try {
+            Scanner scan = new Scanner(System.in);
+            input = scan.nextInt();
+        } catch (InputMismatchException exception) {
+            System.out.println("Please enter an integer");
+            Scanner scan = new Scanner(System.in);
+            input = scan.nextInt();
+        }
         return input;
     }
 
