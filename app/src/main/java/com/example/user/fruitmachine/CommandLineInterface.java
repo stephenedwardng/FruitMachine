@@ -55,13 +55,7 @@ public class CommandLineInterface {
     }
 
     public void promptAskRoll(int count) {
-        System.out.println("Do you want to re-spin roller " + spin.threeRolls.get(count) + "? y / n ");
-    }
-
-    public char actionReSpin() {
-        Scanner scan = new Scanner(System.in);
-        String input = scan.nextLine().toLowerCase();
-        return input.charAt(0);
+        System.out.println("Do you want to re-spin " + spin.threeRolls.get(count) + "? y / n ");
     }
 
 }
