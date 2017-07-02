@@ -36,6 +36,19 @@ public class Spin {
         return threeRolls;
     }
 
+    public int calculateSpinValue() {
+
+        int sum = 0;
+
+        for (Fruit roll : threeRolls) {
+            sum += roll.getValue();
+        }
+
+        return sum;
+    }
+
+
+
 //    public int calculateSpinValue() {
 //
 //        Fruit[] fruits = Fruit.values();
@@ -50,14 +63,14 @@ public class Spin {
 //        return 0;
 //    }
 
-    public int calculateSpinValue() {
-
-        ArrayList<Fruit> currentSpin = collectThreeRolls();
-        int value = 0;
-
-        value += currentSpin.get(0).getValue();
-        value += currentSpin.get(1).getValue();
-        value += currentSpin.get(2).getValue();
+//    public int calculateSpinValue() {
+//
+//        ArrayList<Fruit> currentSpin = collectThreeRolls();
+//        int value = 0;
+//
+//        value += currentSpin.get(0).getValue();
+//        value += currentSpin.get(1).getValue();
+//        value += currentSpin.get(2).getValue();
 
 //            for (int count = 0; count <= 2; count++) {
 //                spinValue += threeRolls.get(count).getValue();
@@ -72,12 +85,12 @@ public class Spin {
 //            return 0;
 //        }
 
+//
+//        if (currentSpin.get(0).getFruitType().equals(currentSpin.get(1).getFruitType())
+//                && currentSpin.get(1).getFruitType().equals(currentSpin.get(2).getFruitType())) {
+//            return value;
+//        } else return -1;
 
-        if (currentSpin.get(0).getFruitType().equals(currentSpin.get(1).getFruitType())
-                && currentSpin.get(1).getFruitType().equals(currentSpin.get(2).getFruitType())) {
-            return value;
-        } else return -1;
-
-    }
+//    }
 
 }
