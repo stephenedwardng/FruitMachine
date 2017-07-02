@@ -21,4 +21,13 @@ public interface UserInterface {
     void promptMoney();
 
     int moneyAction();
+
+    void promptHold();
+
+    void promptAskRoll(int count);
+
+    void promptNudge();
+
+    void promptAskNudge(int count);
+
 }

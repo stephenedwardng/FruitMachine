@@ -6,7 +6,7 @@ import java.util.Scanner;
  * Created by user on 02/07/2017.
  */
 
-public class CommandLineInterface {
+public class CommandLineInterface implements UserInterface {
 
     Spin spin;
 

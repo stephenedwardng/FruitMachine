@@ -1,7 +1,5 @@
 package com.example.user.fruitmachine;
 
-import behaviours.Fruit;
-
 /**
  * Created by user on 02/07/2017.
  */
@@ -31,7 +29,7 @@ public class Game {
 
     }
 
-    public void gameLoop(char choice) {
+    private void gameLoop(char choice) {
 
             int money = 0;
 
